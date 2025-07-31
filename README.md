@@ -26,8 +26,7 @@ CSS has been added to make it **responsive** and accessible from mobile devices.
 
 ### Prerequisites
 
-- **Node.js** (v14+) and **npm** or **yarn** installed.
-- Built with **React 17+**.
+- **Node.js**, **React** and **npm** or **yarn** installed.
 - No additional global dependencies required.
 
 ### Installation Steps
@@ -36,7 +35,7 @@ CSS has been added to make it **responsive** and accessible from mobile devices.
 2. **Install dependencies**  
      Run `npm install` or `yarn install`
 3. **Copy the provided source files** into your project structure
-4. The application uses **vanilla CSS**—no additional CSS processors required
+4. The application uses **vanilla CSS** no additional CSS processors required
 
 ### Running the Application
 
