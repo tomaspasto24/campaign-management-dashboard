@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import CampaignList from './components/CampaignList';
+import CampaignForm from './components/CampaignForm';
+import CampaignMetrics from './components/CampaignMetrics';
+import useCampaigns from './hooks/useCampaigns';
+import useSort from './hooks/useSort';
+import './styles.css';
 
-function App() {
+const App = () => {
+  const { campaigns, addCampaign, deleteCampaign } = useCampaigns();
+  const { sortedItems, requestSort, sortConfig } = useSort(campaigns);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <h1>Campaign Management Dashboard</h1>
+      <div className="dashboard">
+        <div className="form-section">
+          <CampaignForm addCampaign={addCampaign} />
+        </div>
+        <div className="list-section">
+          <CampaignList
+            campaigns={sortedItems}
+            deleteCampaign={deleteCampaign}
+            requestSort={requestSort}
+            sortConfig={sortConfig}
+          />
+        </div>
+        <div className="metrics-section">
+          <CampaignMetrics campaigns={campaigns} />
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default App;

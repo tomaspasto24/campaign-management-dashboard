@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+## Design Decisions
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Form Validation
 
-## Available Scripts
+No request was received detailing form validations; they were designed with arbitrary but reasonable constraints:
 
-In the project directory, you can run:
+- **Campaign Names:** Maximum of 50 characters to keep titles concise yet descriptive.
+- **Date Validations:** Years are restricted between 1900 and current year +5, preventing unrealistic future campaigns while accommodating reasonable planning.
+- **Numeric Fields:** 
+    - Clicks: Minimum 0, maximum 1,000,000.
+    - Financials: $0–$10,000,000.
+    - These constraints prevent data entry errors while supporting most real-world campaign scales.
+- **Date Range Validation:** Ensures logical campaign durations by requiring end dates to follow start dates.
 
-### `npm start`
+### Sorting
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To sort by **name**, **profit**, **start date**, or **end date**, click above the respective label.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### BONUS: Responsive Screen
+CSS has been added to make it **responsive** and accessible from mobile devices.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Setup Instructions
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Node.js** (v14+) and **npm** or **yarn** installed.
+- Built with **React 17+**.
+- No additional global dependencies required.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Installation Steps
 
-### `npm run eject`
+1. **Clone the repository**
+2. **Install dependencies**  
+     Run `npm install` or `yarn install`
+3. **Copy the provided source files** into your project structure
+4. The application uses **vanilla CSS**—no additional CSS processors required
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Running the Application
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Start the development server:**  
+    Run `npm start` or `yarn start`
+- The application will automatically open in your default browser at [http://localhost:3000](http://localhost:3000)
+- **For production builds:**  
+    Run `npm run build` to create optimized static files
